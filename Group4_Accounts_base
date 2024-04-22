@@ -1,4 +1,32 @@
 from pyfinviz.screener import Screener
+#previously installed package
+#https://pypi.org/project/pyfinviz/
+#pip install pyfinviz
+def account1():     
+    print("Account 1")
+    print(" Checking = $",checking)
+    print(" Savings = $",savings)
+    print(" Brokerage = $",brokerage)
+    print(" Others = $",other)
+    return
+def account2():
+    print("Account 2")
+    print(" Checking = $",checking2)
+    print(" Savings = $",savings2)
+    print(" Brokerage = $",brokerage2)
+    print(" Others = $",other2)
+    return
+def account3():
+    print("Account 3")
+    print(" Checking = $",checking3)
+    print(" Savings = $",savings3)
+    print(" Brokerage = $",brokerage3)
+    print(" Others = $",other3)
+    return
+    
+
+
+    
 
 checking = 234.34
 savings = 2342.32
@@ -12,151 +40,161 @@ checking3 = 0
 savings3 = 0
 brokerage3 =0
 other3 = 0
-U = "na"
+U = "shshshsh"
 acc1 = 1
 acc2 = 0
 acc3 = 0
-while U != "a" or "b":
+
+while U != "A" or "B":
+    print("MAIN MENU")
     if acc1 == 0 and acc2 == 0 and acc3== 0:
-        print ("you have no accounts")
-    if acc1 == 1 :
-        print("account 1")
-        print(" Checking =",checking)
-        print(" Savings =",savings)
-        print(" Brokerage =",brokerage)
-        print(" Others =",other)
-    if acc2 == 2:
-        print("account 2")
-        print(" Checking =",checking2)
-        print(" Savings =",savings2)
-        print(" Brokerage =",brokerage2)
-        print(" Others =",other2)
-    if acc3 == 3:
-        print("account 3")
-        print(" Checking =",checking3)
-        print(" Savings =",savings3)
-        print(" Brokerage =",brokerage3)
-        print(" Others =",other3)
-    U = input(" press 'A' for more options, 'B' to go back \n")
-    if U == "a":
-        U = input("What would you like to do? \n press 'A' to add an account \n press 'B' to edit a balance \n press 'C' to remove an account\n press 'D' to Check Stock Market\n Press 'E' To go quit \n")
-        if U == "a":
+        print ("You have no accounts")
+    elif acc1 == 1:
+        account1()
+        if acc2==1:
+            account2()
+        if acc3==1:
+            account3()
+    elif acc2==1:
+        account2()
+        if acc1==1:
+            account1()
+        if acc3==1:
+            account3()
+    elif acc3==1:
+        account3()
+        if acc1==1:
+            account1()
+        if acc2==1:
+            account2()
+    U = input("Press 'A' for more options \n")
+    if U.upper() == "A":
+        U = input("What would you like to do? \n Press 'A' to add an account \n Press 'B' to edit a balance \n Press 'C' to remove an account\n Press 'D' to Check Stock Market\n Press 'E' To return to main menu \n")
+        if U.upper() == "A":
             if acc1 == 0 and acc2 == 0 and acc3== 0:
-                print ("you have no accounts")
+                print ("You have no accounts")
             if acc1 == 0:
-                checking = input("checking is?")
-                savings = input("savings is?")
-                brokerage = input("brokerage is?")
-                other = input("other is?")
-                print ("account 1 set up successfully")
-                acc2 = 1
+                checking = int(input("Checking is?"))
+                savings = int(input("Savings is?"))
+                brokerage = int(input("Brokerage is?"))
+                other = int(input("Other is?"))
+                print ("Account 1 set up successfully")
+                acc1 = 1
                 continue
             if acc1 == 1 and acc2 == 0:
-                checking2 = input("checking is?")
-                savings2 = input("savings is?")
-                brokerage2 = input("brokerage is?")
-                other2 = input("other is?")
-                print ("account 2 set up successfully")
+                checking2 = int(input("Checking is?"))
+                savings2 = int(input("Savings is?"))
+                brokerage2 = int(input("Brokerage is?"))
+                other2 = int(input("Other is?"))
+                print ("Account 2 set up successfully")
                 acc2 = 1
                 continue
             if acc1 == 1 and acc2== 1 and acc3 == 0:
-                checking3 = input("checking is?")
-                savings3 = input("savings is?")
-                brokerage3 = input("brokerage is?")
-                other3 = input("other is?")
-                print ("account 3 set up successfully")
+                checking3 = int(input("Checking is?"))
+                savings3 = int(input("Savings is?"))
+                brokerage3 = int(input("Brokerage is?"))
+                other3 = int(input("Other is?"))
+                print ("Account 3 set up successfully")
                 acc3 = 1
                 continue
             if acc1 == 1 and acc2 == 1 and acc3 == 1:
-                print("account limit reacheced")
+                print("Account limit reacheced")
                 continue
             continue
-        if U == "b":
-            U = input("which account(1,2,3)")
+        if U.upper() == "B":
+            U = input("Which account(1,2,3) ")
             if U == "1":
                 if acc1 == 0:
-                    print("this account does not exist... \n")
+                    print("This account does not exist... \n")
                     continue
                 else:
-                    U = input("which do you want to edit \n 1.checking \n 2.savings \n 3.brokerage \n 4.other\n")
+                    U = input("Which account would you like to edit? \n 1.Checking \n 2.Savings \n 3.Brokerage \n 4.Other\n")
                     if U == "1":
-                        checking = input("change to what")
+                        checking = input("Change to what? $")
                     if U == "2":
-                        savings = input("change to what")
+                        savings = input("Change to what? $")
                     if U == "3":
-                        brokerage = input("change to what")
+                        brokerage = input("Change to what? $")
                     if U == "4":
-                        others = input("change to what")
+                        others = input("Change to what? $")
                     else:
-                        print ("invalid")
+                        if U != ("1" or "2" or "3" or "4"):
+                            print ("Invalid response. Returning to main menu.")
                     continue
                 continue
             if U == "2":
                 if acc2 == 0:
-                    print("this account does not exist... \n")
+                    print("This account does not exist... \n")
                     continue
                 else:
-                    U = input("which do you want to edit \n 1.checking \n 2.savings \n 3.brokerage \n 4.other\n")
+                    U = input("Which do you want to edit \n 1.Checking \n 2.Savings \n 3.Brokerage \n 4.Other\n")
                     if U == "1":
-                        checking2 = input("change to what")
+                        checking2 = input("Change to what? $")
                     if U == "2":
-                        savings2 = input("change to what")
+                        savings2 = input("Change to what? $")
                     if U == "3":
-                        brokerage2 = input("change to what")
+                        brokerage2 = input("Change to what? $")
                     if U == "4":
-                        others2 = input("change to what")
+                        others2 = input("Change to what? $")
                     else:
-                        print ("invalid")
+                        if U != ("1" or "2" or "3" or "4"):
+                            print ("Invalid response. Returning to main menu.")
                     continue
                 continue
             if U == "3":
                 if acc3 == 0:
-                    print("this account does not exist... \n")
+                    print("This account does not exist... \n")
                     continue
                 else:
-                    U = input("which do you want to edit \n 1.checking \n 2.savings \n 3.brokerage \n 4.other\n")
+                    U = input("Which account would you like to edit? \n 1.Checking \n 2.Savings \n 3.Brokerage \n 4.Other\n")
                     if U == "1":
-                        checking3 = input("change to what")
+                        checking3 = input("Change to what? $")
                     if U == "2":
-                        savings3 = input("change to what")
+                        savings3 = input("Change to what? $")
                     if U == "3":
-                        brokerage3 = input("change to what")
+                        brokerage3 = input("Change to what? $")
                     if U == "4":
-                        others3 = input("change to what")
+                        others3 = input("Change to what? $")
                     else:
-                        print ("invalid")
+                        if U != ("1" or "2" or "3" or "4"):
+                            print ("Invalid response. Returning to main menu.")
                     continue
                 continue
-            if U != (1, 2, 3):
-                print("Invalid response")
+            if U != ("1" or "2" or "3"):
+                print("Invalid response. Returning to main menu.")
                 continue
-        if U == "c":
-            U = input("delete which account(1,2,3)\npress b to go back\n")
+        if U.upper() == "C":
+            U = input("delete which account?(1,2,3)\nPress 'B' to go back\n")
             if U == "1":
                 checking = 0
                 savings = 0
                 brokerage = 0
                 other = 0
                 acc1 = 0
-                print ("acc 1 removed succesfully")
+                print ("Account 1 removed succesfully")
+                continue
             if U == "2":
                 checking2 = 0
                 savings2 = 0
                 brokerage2 = 0
                 other2 = 0
                 acc2 = 0
-                print ("acc 2 removed succesfully")
+                print ("Account 2 removed succesfully")
+                continue
             if U == "3":
                 checking3 = 0
                 savings3 = 0
                 brokerage3 = 0
                 other3 = 0
                 acc3 = 0
-                print ("acc 3 removed succesfully")
-            if U == "b":
+                print ("Account 3 removed succesfully")
                 continue
-            continue
-        if U == "d":
+            if U.upper() == "B":
+                continue
+            else:
+                print("Invalid response. Returning to main menu.")
+                continue
+        if U.upper() == "D":
             options = [Screener.IndustryOption.STOCKS_ONLY_EX_FUNDS, Screener.PEOption.LOW_LESS_THAN_15,
                        Screener.VolatilityOption.WEEK_OVER_3_PERCENT, Screener.RSI14Option.OVERSOLD_20]
     #searches the market for:
@@ -168,11 +206,17 @@ while U != "a" or "b":
             pages=[x for x in range(1, 2)])#creates table
             print(screener.data_frames)  
 
-            print("Listed above are Stocks worthy of buying.\nCheck at a different time if no stocks available.\n")
+            print("Listed above are Stocks worthy of buying.\n Check at a different time if no stocks available.\n")
+            U= input("Press 'B' to return to main menu.\n")
+            if U.upper()=="B":
+                continue
+            else:
+                print("Invalid response. Returning to main menu.")
+        if U.upper() == "E":
             continue
         else:
-            print("Invalid")
-    if U == "e":
-        break
+            print("Invalid response. Returning to main menu.")
     else:
-        print("Enter a valid response")
+         print("Invalid response. Returning to main menu.")
+
+
