@@ -1,0 +1,281 @@
+import random
+checking = 234.34
+savings = 2342.32
+brokerage = 1324.32
+other = 1232.32
+checking2 = 0
+savings2 = 0
+brokerage2 =0
+other2 = 0
+checking3 = 0
+savings3 = 0
+brokerage3 =0
+other3 = 0
+choice = "na"
+mchoice = 0
+acc1 = 1
+acc2 = 0
+com1 = random.randint(-5, 5)
+com2 = random.randint(-5, 5)
+com3 = random.randint(-5, 5)
+acc3 = 0
+online = 1
+while online == 1:
+    
+    Menu:[
+        print("\nMenu"),
+        print("1. Deposit money"),
+        print("2. transfer or send money"),
+        print("3. Accounts"),
+        print("4. Stocks and status"),
+        print("5. Enter to exit program")
+        ]
+    choice = input("wat do?\n")
+    if choice == "1":
+        choice = input("Which account 1 2 3")
+        if choice == "1":
+            print("\nDeposit menu\n"),
+            print("1. Checking",checking),
+            print("2. Savings",savings),
+            print("3. Brokrage account",brokerage),
+            print("4. Enter to go back to menu")
+            choice = input("wat do?/n")
+            if choice == "1":
+                checking = checking + float(input("add how much"))
+                print ("your new value is", checking)
+                continue
+            if choice == "2":
+                savings = savings + float(input("add how much"))
+                print ("your new value is", savings)
+                continue
+            if choice == "3":
+                brokerage = brokerage + float(input("add how much"))
+                print ("your new value is", brokerage)
+                continue
+            if choice == "4":
+                continue
+            continue
+        if choice == "2":
+            print("\nDeposit menu\n"),
+            print("1. Checking",checking2),
+            print("2. Savings",savings2),
+            print("3. Brokrage account",brokerage2),
+            print("4. Enter to go back to menu")
+            choice = input("wat do?/n")
+            if choice == "2":
+                checking2 = checking2 + float(input("add how much"))
+                print ("your new value is", checking2)
+                continue
+            if choice == "2":
+                savings2 = savings2 + float(input("add how much"))
+                print ("your new value is", savings2)
+                continue
+            if choice == "3":
+                brokerage2 = brokerage2 + float(input("add how much"))
+                print ("your new value is", brokerage2)
+                continue
+            if choice == "4":
+                continue
+            continue
+        if choice == "3":
+            print("\nDeposit menu\n"),
+            print("1. Checking",checking3),
+            print("2. Savings",savings3),
+            print("3. Brokrage account",brokerage3),
+            print("4. Enter to go back to menu")
+            choice = input("wat do?/n")
+            if choice == "1":
+                checking3 = checking3 + float(input("add how much"))
+                print ("your new value is", checking3)
+                continue
+            if choice == "2":
+                savings3 = savings3 + float(input("add how much"))
+                print ("your new value is", savings3)
+                continue
+            if choice == "3":
+                brokerage3 = brokerage3 + float(input("add how much"))
+                print ("your new value is", brokerage3)
+                continue
+            if choice == "4":
+                continue
+            continue
+        continue
+    if choice == "2":
+        print ("wip")
+        continue
+    if choice == "3":
+        if acc1 == 0 and acc2 == 0 and acc3== 0:
+            print ("you have no accounts")
+        if acc1 == 1 :
+            print("account 1")
+            print(" Checking =",checking)
+            print(" Savings =",savings)
+            print(" Brokerage =",brokerage)
+            print(" Others =",other)
+        if acc2 == 1:
+            print("account 2")
+            print(" Checking =",checking2)
+            print(" Savings =",savings2)
+            print(" Brokerage =",brokerage2)
+            print(" Others =",other2)
+        if acc3 == 1:
+            print("account 3")
+            print(" Checking =",checking3)
+            print(" Savings =",savings3)
+            print(" Brokerage =",brokerage3)
+            print(" Others =",other3)
+        choice = input(" press a for more options, b to go back \n")
+        if choice== "a":
+            choice= input("Wat do \n press a to add an account \n press b to add to edit a balaence \n press c to remove and account\n press d to go back")
+            if choice== "a":
+                if acc1 == 0 and acc2 == 0 and acc3== 0:
+                    print ("you have no accounts")
+                if acc1 == 0:
+                    checking = input("checking is?")
+                    savings = input("savings is?")
+                    brokerage = input("brokerage is?")
+                    other = input("other is?")
+                    print ("account 2 set up successfully")
+                    acc2 = 1
+                    continue
+                if acc1 == 1 and acc2 == 0:
+                    checking2 = input("checking is?")
+                    savings2 = input("savings is?")
+                    brokerage2 = input("brokerage is?")
+                    other2 = input("other is?")
+                    print ("account 2 set up successfully")
+                    acc2 = 1
+                    continue
+                if acc1 == 1 and acc2== 1 and acc3 == 0:
+                    checking3 = input("checking is?")
+                    savings3 = input("savings is?")
+                    brokerage3 = input("brokerage is?")
+                    other3 = input("other is?")
+                    print ("account 3 set up successfully")
+                    acc3 = 1
+                    continue
+                if acc1 == 1 and acc2 == 1 and acc3 == 1:
+                    print("account limit reacheced")
+                    continue
+                continue
+            if choice== "b":
+                choice= input("which account(1,2,3)")
+                if choice== "1":
+                    if acc1 == 0:
+                        print("this account does not exist... \n")
+                        continue
+                    else:
+                        choice= input("which do you want to edit /n 1.checking /n 2.savings /n 3broke /n 4.other")
+                        if choice== "1":
+                            checking = input("change to what")
+                        if choice== "2":
+                            savings = input("change to what")
+                        if choice== "3":
+                            brokerage = input("change to what")
+                        if choice== "4":
+                            others = input("change to what")
+                        else:
+                            print ("invalid")
+                        continue
+                    continue
+                if choice== "2":
+                    if acc2 == 0:
+                        print("this account does not exist... \n")
+                        continue
+                    else:
+                        choice= input("which do you want to edit /n 1.checking /n 2.savings /n 3broke /n 4.other")
+                        if choice== "1":
+                            checking2 = input("change to what")
+                        if choice== "2":
+                            savings2 = input("change to what")
+                        if choice== "3":
+                            brokerage2 = input("change to what")
+                        if choice== "4":
+                            others2 = input("change to what")
+                        else:
+                            print ("invalid")
+                        continue
+                    continue
+                if choice== "3":
+                    if acc3 == 0:
+                        print("this account does not exist... \n")
+                        continue
+                    else:
+                        choice= input("which do you want to edit /n 1.checking /n 2.savings /n 3broke /n 4.other")
+                        if choice== "1":
+                            checking3 = input("change to what")
+                        if choice== "2":
+                            savings3 = input("change to what")
+                        if choice== "3":
+                            brokerage3 = input("change to what")
+                        if choice== "4":
+                            others3 = input("change to what")
+                        else:
+                            print ("invalid")
+                        continue
+                    continue
+            if choice== "c":
+                choice= input("delete which account(1,2,3)press b to go back)")
+                if choice== "1":
+                    checking = 0
+                    savings = 0
+                    brokerage = 0
+                    other = 0
+                    acc1 = 0
+                    print ("acc 1 removed succesfully")
+                if choice== "2":
+                    checking2 = 0
+                    savings2 = 0
+                    brokerage2 = 0
+                    other2 = 0
+                    acc2 = 0
+                    print ("acc 2 removed succesfully")
+                if choice== "3":
+                    checking3 = 0
+                    savings3 = 0
+                    brokerage3 = 0
+                    other3 = 0
+                    acc3 = 0
+                    print ("acc 3 removed succesfully")
+                if choice== "b":
+                    continue
+                continue
+            if choice== "d":
+                print("returning...")
+                continue
+            else:
+                print("Invalid")
+        if choice== "b":
+            continue
+        else:
+            print("Invalid")
+            continue
+        continue
+    if choice == "4":
+        choice = input("which company?\n (1) Company 1\n (2) Company 2\n (3) Company 3\n (4) Move forward a Month \n(5) Exit")
+        if choice == "1":
+            print ("the banking app currently values company 1 at a ", com1, "Stockwise")
+            continue
+        if choice == "2":
+            print ("the banking app currently values company 2 at a ", com2, "Stockwise")
+            continue
+        if choice == "3":
+            print ("the banking app currently values company 3 at a ", com3, "Stockwise")
+            continue
+        if choice == "4":
+            com1 = random.randint(-5, 5)
+            com2 = random.randint(-5, 5)
+            com3 = random.randint(-5, 5)
+            continue
+        if choice == "5":
+            continue
+        elif choice != "1" or "1" or "2" or"3" or "4" or "5":
+            print("Invalid")
+            continue
+    if choice == "5":
+        print ("turning off")
+        online = 0
+        break
+    else:
+        print("invalid")
+    continue
