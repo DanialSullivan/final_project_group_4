@@ -4,51 +4,43 @@ from pyfinviz.screener import Screener
 #pip install pyfinviz
 def account1():     
     print("Account 1")
-    print(" Checking = $",checking)
-    print(" Savings = $",savings)
-    print(" Brokerage = $",brokerage)
-    print(" Others = $",other)
+    print(" Checking = $",Account1["Checking"])
+    print(" Savings = $",Account1["Savings"])
+    print(" Brokerage = $",Account1["Brokerage"])
+    print(" Others = $",Account1["Other"])
     return
 def account2():
     print("Account 2")
-    print(" Checking = $",checking2)
-    print(" Savings = $",savings2)
-    print(" Brokerage = $",brokerage2)
-    print(" Others = $",other2)
+    print(" Checking = $",Account2["Checking"])
+    print(" Savings = $",Account2["Savings"])
+    print(" Brokerage = $",Account2["Brokerage"])
+    print(" Others = $",Account2["Other"])
     return
 def account3():
     print("Account 3")
-    print(" Checking = $",checking3)
-    print(" Savings = $",savings3)
-    print(" Brokerage = $",brokerage3)
-    print(" Others = $",other3)
+    print(" Checking = $",Account3["Checking"])
+    print(" Savings = $",Account3["Savings"])
+    print(" Brokerage = $",Account3["Brokerage"])
+    print(" Others = $",Account3["Other"])
     return
+def gobackMM():
+        print ("Invalid response. Returning to main menu.")  #less words in main
+        
+
     
 
 
-    
-
-checking = 234.34
-savings = 2342.32
-brokerage = 1324.32
-other = 1232.32
-checking2 = 0
-savings2 = 0
-brokerage2 =0
-other2 = 0
-checking3 = 0
-savings3 = 0
-brokerage3 =0
-other3 = 0
 U = "shshshsh"
 acc1 = 1
 acc2 = 0
 acc3 = 0
-
+Account1={"Checking":234.34, "Savings":545.47,"Brokerage":7841.01,"Other":548.20}
+Account2={"Checking":0, "Savings":0,"Brokerage":0,"Other":0}
+Account3={"Checking":0, "Savings":0,"Brokerage":0,"Other":0}
 while U != "A" or "B":
     print("MAIN MENU")
     if acc1 == 0 and acc2 == 0 and acc3== 0:
-        print ("You have no accounts")
+        print ("You have no accounts") 
     elif acc1 == 1:
         account1()
         if acc2==1:
@@ -56,7 +48,7 @@ while U != "A" or "B":
         if acc3==1:
             account3()
     elif acc2==1:
-        account2()
+        account2()                      
         if acc1==1:
             account1()
         if acc3==1:
@@ -68,142 +60,236 @@ while U != "A" or "B":
         if acc2==1:
             account2()
     U = input("Press 'A' for more options \n")
-    if U.upper() == "A":
+
+
+
+
+    
+    if U.upper() == "A": #main menu
         U = input("What would you like to do? \n Press 'A' to add an account \n Press 'B' to edit a balance \n Press 'C' to remove an account\n Press 'D' to Check Stock Market\n Press 'E' To return to main menu \n")
-        if U.upper() == "A":
-            if acc1 == 0 and acc2 == 0 and acc3== 0:
-                print ("You have no accounts")
+
+
+        if U.upper() == "A":  #add account         
             if acc1 == 0:
-                checking = int(input("Checking is?"))
-                savings = int(input("Savings is?"))
-                brokerage = int(input("Brokerage is?"))
-                other = int(input("Other is?"))
-                print ("Account 1 set up successfully")
-                acc1 = 1
+                ac1=input("What is the Checking amount?")        # this meathod is used to check user response for a int or float.
+                if ac1.isdigit():                       # if it is not, the input is ignored, user told inccorect response
+                    Account1["Checking"]=ac1            # and sent back to the main meanu.
+                else:
+                    gobackMM()
+                    continue
+                as1=input("What is the Savings amount?")
+                if as1.isdigit():
+                    Account1['Savings']=as1
+                else:
+                    gobackMM()
+                    continue
+                ab1=input("What is the Brokerage amount?")
+                if ab1.isdigit():
+                    Account1['Brokerage']=ab1
+                else:
+                    gobackMM()
+                    continue
+                ao1=input("What is the Other amount?")
+                if ao1.isdigit():
+                    Account1['Other']=ao1                    
+                else:
+                    gobackMM()
+                    continue
+                acc1=1                                  #used to display accounts in main menu
                 continue
+                
             if acc1 == 1 and acc2 == 0:
-                checking2 = int(input("Checking is?"))
-                savings2 = int(input("Savings is?"))
-                brokerage2 = int(input("Brokerage is?"))
-                other2 = int(input("Other is?"))
-                print ("Account 2 set up successfully")
-                acc2 = 1
+                ac2=input("What is the Checking amount?")
+                if ac2.isdigit():
+                    Account2["Checking"]=ac2
+                else:
+                    gobackMM()
+                    continue
+                as2=input("What is the Savings amount?")
+                if as2.isdigit():
+                    Account2['Savings']=as2
+                else:
+                    gobackMM()
+                    continue
+                ab2=input("What is the Brokerage amount?")
+                if ab2.isdigit():
+                    Account2['Brokerage']=ab2
+                else:
+                    gobackMM()
+                    continue
+                ao2=input("What is the Other amount?")
+                if ao2.isdigit():
+                    Account2['Other']=ao2                    
+                else:
+                    gobackMM()
+                    continue
+                acc2=1
                 continue
+                
             if acc1 == 1 and acc2== 1 and acc3 == 0:
-                checking3 = int(input("Checking is?"))
-                savings3 = int(input("Savings is?"))
-                brokerage3 = int(input("Brokerage is?"))
-                other3 = int(input("Other is?"))
-                print ("Account 3 set up successfully")
-                acc3 = 1
+                ac3=input("What is the Checking amount?")
+                if ac3.isdigit():
+                    Account3["Checking"]=ac3
+                else:
+                    gobackMM()
+                    continue
+                as3=input("What is the Savings amount?")
+                if as3.isdigit():
+                    Account3['Savings']=as3
+                else:
+                    gobackMM()
+                    continue
+                ab3=input("What is the Brokerage amount?")
+                if ab3.isdigit():
+                    Account3['Brokerage']=ab3
+                else:
+                    gobackMM()
+                    continue
+                ao3=input("What is the Other amount?")
+                if ao3.isdigit():
+                    Account3['Other']=ao3                    
+                else:
+                    gobackMM()
+                    continue
+                acc3=1
                 continue
             if acc1 == 1 and acc2 == 1 and acc3 == 1:
                 print("Account limit reacheced")
                 continue
             continue
-        if U.upper() == "B":
+
+
+
+
+        
+        if U.upper() == "B":    #edit account
             U = input("Which account(1,2,3) ")
             if U == "1":
                 if acc1 == 0:
-                    print("This account does not exist... \n")
+                    print("This account does not exist... \n")      
                     continue
                 else:
-                    U = input("Which account would you like to edit? \n 1.Checking \n 2.Savings \n 3.Brokerage \n 4.Other\n")
-                    if U == "1":
-                        checking = input("Change to what? $")
-                    if U == "2":
-                        savings = input("Change to what? $")
-                    if U == "3":
-                        brokerage = input("Change to what? $")
-                    if U == "4":
-                        others = input("Change to what? $")
+                    ec1=input("Change Checking to?")
+                    if ec1.isdigit():
+                        Account1["Checking"]=ec1
                     else:
-                        if U != ("1" or "2" or "3" or "4"):
-                            print ("Invalid response. Returning to main menu.")
-                    continue
-                continue
+                        gobackMM()
+                        continue
+                    es1=input("Change Savings to?")
+                    if es1.isdigit():
+                        Account1['Savings']=es1
+                    else:
+                        gobackMM()
+                        continue
+                    eb1=input("Change Brokerage to?")
+                    if eb1.isdigit():
+                        Account1['Brokerage']=eb1
+                    else:
+                       gobackMM()
+                       continue
+                    eo1=input("Change Other to?")
+                    if eo1.isdigit():
+                        Account1['Other']=eo1                    
+                    else:
+                        gobackMM()
+                        continue
+                            
+            
             if U == "2":
                 if acc2 == 0:
                     print("This account does not exist... \n")
                     continue
                 else:
-                    U = input("Which do you want to edit \n 1.Checking \n 2.Savings \n 3.Brokerage \n 4.Other\n")
-                    if U == "1":
-                        checking2 = input("Change to what? $")
-                    if U == "2":
-                        savings2 = input("Change to what? $")
-                    if U == "3":
-                        brokerage2 = input("Change to what? $")
-                    if U == "4":
-                        others2 = input("Change to what? $")
+                    ec1=input("Change Checking to?")
+                    if ec1.isdigit():
+                        Account2["Checking"]=ec1
                     else:
-                        if U != ("1" or "2" or "3" or "4"):
-                            print ("Invalid response. Returning to main menu.")
-                    continue
-                continue
+                        gobackMM()
+                        continue
+                    es1=input("Change Savings to?")
+                    if es1.isdigit():
+                        Account2['Savings']=es1
+                    else:
+                        gobackMM()
+                        continue
+                    eb1=input("Change Brokerage to?")
+                    if eb1.isdigit():
+                        Account2['Brokerage']=eb1
+                    else:
+                       gobackMM()
+                       continue
+                    eo1=input("Change Other to?")
+                    if eo1.isdigit():
+                        Account2['Other']=eo1                    
+                    else:
+                        gobackMM()
+                        continue
+                
             if U == "3":
                 if acc3 == 0:
                     print("This account does not exist... \n")
                     continue
                 else:
-                    U = input("Which account would you like to edit? \n 1.Checking \n 2.Savings \n 3.Brokerage \n 4.Other\n")
-                    if U == "1":
-                        checking3 = input("Change to what? $")
-                    if U == "2":
-                        savings3 = input("Change to what? $")
-                    if U == "3":
-                        brokerage3 = input("Change to what? $")
-                    if U == "4":
-                        others3 = input("Change to what? $")
+                    ec1=input("Change Checking to?")
+                    if ec1.isdigit():
+                        Account3["Checking"]=ec1
                     else:
-                        if U != ("1" or "2" or "3" or "4"):
-                            print ("Invalid response. Returning to main menu.")
-                    continue
-                continue
-            if U != ("1" or "2" or "3"):
-                print("Invalid response. Returning to main menu.")
-                continue
-        if U.upper() == "C":
+                        gobackMM()
+                        continue
+                    es1=input("Change Savings to?")
+                    if es1.isdigit():
+                        Account3['Savings']=es1
+                    else:
+                        gobackMM()
+                        continue
+                    eb1=input("Change Brokerage to?")
+                    if eb1.isdigit():
+                        Account3['Brokerage']=eb1
+                    else:
+                       gobackMM()
+                       continue
+                    eo1=input("Change Other to?")
+                    if eo1.isdigit():
+                        Account3['Other']=eo1                    
+                    else:
+                        gobackMM()
+                        continue
+                
+
+
+
+            
+        if U.upper() == "C":  #remove an account
             U = input("delete which account?(1,2,3)\nPress 'B' to go back\n")
             if U == "1":
-                checking = 0
-                savings = 0
-                brokerage = 0
-                other = 0
                 acc1 = 0
                 print ("Account 1 removed succesfully")
-                continue
-            if U == "2":
-                checking2 = 0
-                savings2 = 0
-                brokerage2 = 0
-                other2 = 0
+                continue                                        
+            if U == "2":          
                 acc2 = 0
                 print ("Account 2 removed succesfully")
                 continue
             if U == "3":
-                checking3 = 0
-                savings3 = 0
-                brokerage3 = 0
-                other3 = 0
                 acc3 = 0
                 print ("Account 3 removed succesfully")
                 continue
             if U.upper() == "B":
                 continue
             else:
-                print("Invalid response. Returning to main menu.")
+                gobackMM()
                 continue
-        if U.upper() == "D":
-            options = [Screener.IndustryOption.STOCKS_ONLY_EX_FUNDS, Screener.PEOption.LOW_LESS_THAN_15,
+
+
+            
+        if U.upper() == "D":    #check stocks
+            options = [Screener.IndustryOption.STOCKS_ONLY_EX_FUNDS,#Screener.PEOption.LOW_LESS_THAN_15,
                        Screener.VolatilityOption.WEEK_OVER_3_PERCENT, Screener.RSI14Option.OVERSOLD_20]
     #searches the market for:
     #1. stocks(no crypto, futures,etc)
     #2. price-to-earnings ratio is less than 15%
     #3. Volatility over 3% for the week
     #4. Relative strength index(RSI) is considered oversold byt 20%
-            screener = Screener(filter_options=options, view_option=Screener.ViewOption.VALUATION,
-            pages=[x for x in range(1, 2)])#creates table
+            screener = Screener(filter_options=options, view_option=Screener.ViewOption.VALUATION,pages=[x for x in range(1, 2)])#creates table
             print(screener.data_frames)  
 
             print("Listed above are Stocks worthy of buying.\n Check at a different time if no stocks available.\n")
@@ -211,12 +297,19 @@ while U != "A" or "B":
             if U.upper()=="B":
                 continue
             else:
-                print("Invalid response. Returning to main menu.")
-        if U.upper() == "E":
+                gobackMM()
+                continue
+
+
+
+
+
+                
+        if U.upper() == "E":    #return to main menu
             continue
         else:
-            print("Invalid response. Returning to main menu.")
+            gobackMM()
+            continue
     else:
-         print("Invalid response. Returning to main menu.")
-
-
+         gobackMM()
+         continue
